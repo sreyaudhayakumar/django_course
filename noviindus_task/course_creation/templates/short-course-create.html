@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Add Course{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div class="page-header">
+                    <h1 class="page-title"> View</h1>
+                    <a href="courses_list" class="btn btn-danger btn-pill">view <i
+                            class="fa fa-plus"></i></a>
+</div>
+               
+    <div class="container mt-5">
+        <h2>Add Course</h2>
+        <form method="POST" action="{% url 'add_course' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Title -->
+            <div class="form-group">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="form-group">
+                <label class="form-label">Subtitle</label>
+                <input type="text" class="form-control" name="subtitle" required>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="description" required></textarea>
+            </div>
+
+            <!-- Amount -->
+            <div class="form-group">
+                <label class="form-label">Amount</label>
+                <input type="text" class="form-control" name="amount" required>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-group">
+                <label class="form-label">Additional Information</label>
+                <textarea class="form-control" name="additional_info" required></textarea>
+            </div>
+
+            <!-- Status -->
+            <div class="form-group">
+                <label class="form-label">Status</label>
+                <select class="form-control" name="status" required>
+                    <option value="Enable">Enable</option>
+                    <option value="Disable">Disable</option>
+                </select>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="form-group">
+                <label class="form-label">Image Upload</label>
+                <input type="file" class="form-control-file" name="image" accept="image/*">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Add Course</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

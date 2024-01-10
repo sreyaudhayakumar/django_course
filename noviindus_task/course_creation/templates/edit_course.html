@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Edit Course{% endblock %}</title>
+    
+    <!-- Add your CSS styles or link to external stylesheets here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Edit Course</h2>
+    {% if edit_courses %}
+        <form method="post" action="">
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <td><label class="form-label">title</label></td>
+                    <td><input type="text" class="form-control" name="title" value="{{ edit_courses.title }}" required></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label">Subtitle</label></td>
+                    <td><input type="text" class="form-control" name="subtitle" value="{{ edit_courses.subtitle }}" required></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label">description</label></td>
+                    <td><input type="text" class="form-control" name="description" value="{{ edit_courses.description }}" required></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label">Amount</label></td>
+                    <td><input type="text" class="form-control" name="amount" value="{{ edit_courses.amount }}" required></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label">Additional Info</label></td>
+                    <td><input type="text" class="form-control" name="additional_info" value="{{ edit_courses.additional_info }}" required></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label">Status</label></td>
+                    <td><input type="text" class="form-control" name="status" value="{{ edit_courses.status }}" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    {% endif %}
+</div>
+
+<!-- Include your JavaScript files here -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

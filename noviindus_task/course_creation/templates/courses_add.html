@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Add course{% endblock %}</title>
+    
+    <!-- Add your CSS styles or link to external stylesheets here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h2>Add Course</h2>
+    <div class="login-form"><!-- login form -->
+        <form method="POST" action="{% url 'add_course' %}">
+    {% csrf_token %}
+    <table class="table">
+        <tr>
+            <td><label class="form-label">Title</label></td>
+            <td><input type="text" class="form-control" name="title" required></td>
+        </tr>
+        <tr>
+            <td><label class="form-label">Description</label></td>
+            <td><input type="text" class="form-control" name="description" required></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" class="btn btn-primary">Add Course</button>
+            </td>
+        </tr>
+    </table>
+   </form>
+    </div>
+
+    <!-- Include your JavaScript files here -->
+    <script src="{% static 'js/script.js' %}"></script>
+    
+</body>
+
+</html>

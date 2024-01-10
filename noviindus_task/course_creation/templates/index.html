@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Your additional CSS files -->
+    <link rel="stylesheet" href="{% static 'assests/css/style.css' %}">
+
+    <!-- Add your additional head elements here, if any -->
+</head>
+
+<body>
+    <!-- Include header -->
+    {% include 'header.html' %}
+
+    <!-- App content open -->
+    <div class="main-content app-content mt-0">
+        <div class="side-app">
+            <!-- Container -->
+            <div class="main-container container-fluid">
+                <!-- Page header -->
+                <div class="page-header">
+                    <h1 class="page-title">Dashboard</h1>
+                    <div>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            {% comment %} <li class="breadcrumb-item active" aria-current="page">Dashboard</li> {% endcomment %}
+                            <li class="breadcrumb-item"><a href="dashborad">Dashboard</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- Page header end -->
+                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="add_course">add_course</a></li>
+                                    <li class="breadcrumb-item"><a href="courses_list">course_view</a></li>
+                                    <li class="breadcrumb-item"><a href="account">profile</a></li>
+                                    <li class="breadcrumb-item"><a href="dashborad">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="login">login</a></li>
+                                
+                                </ol>
+
+                <!-- Row open -->
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card bg-primary img-card box-primary-shadow">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="text-white">
+                                        <h2 class="mb-0 number-font">7,865</h2>
+                                        <p class="text-white mb-0">Contacts</p>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <i class="fa fa-phone text-white fs-30 me-2 mt-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row closed -->
+            </div>
+            <!-- Container end -->
+        </div>
+    </div>
+    <!-- App content close -->
+
+    <!-- Include footer -->
+    {% include 'footer.html' %}
+
+    <div class="container mt-5">
+        <h1>Welcome to Your Website</h1>
+        <p>This is a sample HTML page with Bootstrap and custom JavaScript.</p>
+
+        <!-- Your existing HTML content -->
+    </div>
+
+    <!-- BACK-TO-TOP -->
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- jQuery JS -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/plugins/bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Your additional JavaScript files -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+
+    <!-- Add your additional body scripts or scripts references here, if any -->
+</body>
+
+</html>
